@@ -1,22 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-     /*  Samsung samsung = new Samsung("Samsung", "Samsung Galaxy S8");
-       samsung.print();
 
-       Iphone iphone = new Iphone("iPhone", "purple");
-       iphone.print();
-
-       Xiaomi xiaomi = new Xiaomi("Xiaomi", "Android");
-       xiaomi.print(); */
-
-       // Printable[] printables = {samsung};
-
-        Main.createObject("2й");
-        Main.createObject("3й");
-        Main.createObject("4й");
+        createObject("2й");
+        createObject("3й");
+        createObject("4й");
     }
 
-    public static Telephone createObject(String className) {
+    public static String createObject(String className) {
         switch (className) {
             case "2й":
                 Samsung samsung = new Samsung("Samsung", "Samsung Galaxy S8");
@@ -30,6 +20,6 @@ public class Main {
                 Xiaomi xiaomi = new Xiaomi("Xiaomi", "Android");
                 xiaomi.print();
         }
-     return null;
+     return className;
     }
 }
