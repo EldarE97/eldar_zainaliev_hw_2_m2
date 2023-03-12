@@ -1,25 +1,29 @@
 public class Main {
     public static void main(String[] args) {
+        Samsung samsung = (Samsung) createObject("2nd");
+        Iphone iphone = (Iphone) createObject("3rd");
+        Xiaomi xiaomi = (Xiaomi) createObject("4th");
 
-        createObject("2й");
-        createObject("3й");
-        createObject("4й");
+        samsung.print();
+        iphone.print();
+        xiaomi.print();
     }
 
-    public static String createObject(String className) {
+    public static Object createObject(String className) {
+        Object obj = null;
         switch (className) {
-            case "2й":
-                Samsung samsung = new Samsung("Samsung", "Samsung Galaxy S8");
-                samsung.print();
+            case "2nd":
+                obj = new Samsung("Samsung", "Samsung Galaxy S8");
                 break;
-            case "3й":
-                Iphone iphone = new Iphone("iPhone", "purple");
-                iphone.print();
+            case "3rd":
+                obj = new Iphone("iPhone", "purple");
                 break;
-            case "4й":
-                Xiaomi xiaomi = new Xiaomi("Xiaomi", "Android");
-                xiaomi.print();
+            case "4th":
+                obj = new Xiaomi("Xiaomi", "Android");
+                break;
+            default:
+                System.out.println("Error: Enter a string value from 2 to 4!" + className);
         }
-     return className;
+        return obj;
     }
 }
